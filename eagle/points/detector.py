@@ -61,7 +61,7 @@ def beaudet(
 # For Harris response
 def harris_plessey(Mij: numpy.ndarray, k: float = 0.04) -> float:
     # eigen_values = numpy.linalg.eigvals(Mij)
-    a, b, c, d = Mij[0, 0], Mij[0, 1], Mij[1, 0], Mij[1, 1]
+    a, b, _, c = Mij[0, 0], Mij[0, 1], Mij[1, 0], Mij[1, 1]
     lambda1: float = 0.5 * (a + c - numpy.sqrt((a-c)**2 + 4*b**2))
     lambda2: float = 0.5 * (a + c + numpy.sqrt((a-c)**2 + 4*b**2))
     detM: float = lambda1 * lambda2
@@ -70,7 +70,7 @@ def harris_plessey(Mij: numpy.ndarray, k: float = 0.04) -> float:
 
 def noble(Mij: numpy.ndarray, epsilon: float = 1e-15) -> float:
     # eigen_values = numpy.linalg.eigvals(Mij)
-    a, b, c, d = Mij[0, 0], Mij[0, 1], Mij[1, 0], Mij[1, 1]
+    a, b, _, c = Mij[0, 0], Mij[0, 1], Mij[1, 0], Mij[1, 1]
     lambda1: float = 0.5 * (a + c - numpy.sqrt((a-c)**2 + 4*b**2))
     lambda2: float = 0.5 * (a + c + numpy.sqrt((a-c)**2 + 4*b**2))
     detM: float = lambda1 * lambda2
@@ -79,7 +79,7 @@ def noble(Mij: numpy.ndarray, epsilon: float = 1e-15) -> float:
 
 def shi_tomasi(Mij: numpy.ndarray) -> float:
     # eigen_values = numpy.linalg.eigvals(Mij)
-    a, b, c, d = Mij[0, 0], Mij[0, 1], Mij[1, 0], Mij[1, 1]
+    a, b, _, c = Mij[0, 0], Mij[0, 1], Mij[1, 0], Mij[1, 1]
     lambda1: float = 0.5 * (a + c - numpy.sqrt((a-c)**2 + 4*b**2))
     return lambda1
 
