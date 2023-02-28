@@ -1,4 +1,4 @@
-# Computereagle
+# Eagle
 A module for computer vision
 
 
