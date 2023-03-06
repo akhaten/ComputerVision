@@ -136,10 +136,15 @@ def remove_non_maxima(response: numpy.ndarray, size_neigh: int) -> numpy.ndarray
 # def select_with_threshold(response: numpy.ndarray, threshold: int) -> tuple[numpy.ndarray, numpy.ndarray]:
 #     return numpy.where(threshold < response)
 
-def select_with_threshold(response: numpy.ndarray, epsilon: int) -> tuple[numpy.ndarray, numpy.ndarray]:
+# def select_with_threshold(response: numpy.ndarray, epsilon: int) -> tuple[numpy.ndarray, numpy.ndarray]:
+#     value_max = numpy.max(response)
+#     threshold = epsilon*value_max
+#     return numpy.where(threshold < response)
+
+def select_with_threshold(response: numpy.ndarray, epsilon: int) -> numpy.ndarray:
     value_max = numpy.max(response)
     threshold = epsilon*value_max
-    return numpy.where(threshold < response)
-
+    points: tuple[numpy.ndarray, numpy.ndarray] = numpy.where(threshold < response)
+    return numpy.transpose(numpy.array(points))
 
     
