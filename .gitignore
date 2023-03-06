@@ -1,1 +1,6 @@
 */**/__pycache__
+./examples/tests.ipynb
+
+
+./eagle/utils.py
+./eagle/points/descriptor/lbp.py
