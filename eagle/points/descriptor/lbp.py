@@ -1,5 +1,8 @@
 import numpy
 
+
+def circ
+
 # class LocalBinaryPatterns:
 
 #     def __init__(self, pixel: tuple[int, int]) -> None:
