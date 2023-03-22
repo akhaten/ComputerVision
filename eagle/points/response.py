@@ -74,7 +74,7 @@ def harris(
     elif method == 'shi_tomasi':
         fmethod = eagle.points.detector.shi_tomasi
     else:
-        raise AssertionError('method must be odd')
+        raise AssertionError('harris_plessey or noble or shi_tomasi')
 
     if size_search%2 != 1:
         raise AssertionError('search_size must be odd')
