@@ -41,7 +41,8 @@ def hartley_normalization(points: numpy.ndarray, hartley_m: numpy.ndarray) -> nu
 
 
 def homography_estimation(points_1: numpy.ndarray, points_2: numpy.ndarray, normalization: bool = False) -> numpy.ndarray:
-
+    assert points_1.shape[1] == points_2.shape[1] == 2, "Points must be a row list of 2D points"
+    assert points_1.shape[0] == points_2.shape[0], "Points must have the same length to be matched"
     pts1 = numpy.copy(points_1)
     pts2 = numpy.copy(points_2)
 

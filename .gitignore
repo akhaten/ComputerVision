@@ -4,3 +4,4 @@
 
 ./eagle/utils.py
 ./eagle/points/descriptor/lbp.py
+*.png

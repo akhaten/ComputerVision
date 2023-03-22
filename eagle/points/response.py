@@ -141,6 +141,11 @@ def remove_non_maxima(response: numpy.ndarray, size_neigh: int) -> numpy.ndarray
 #     threshold = epsilon*value_max
 #     return numpy.where(threshold < response)
 
+def select_best(response: numpy.ndarray, n: int) -> numpy.ndarray:
+    """From 2d indices solution taken from https://stackoverflow.com/a/64338853"""
+    y, x = numpy.unravel_index(numpy.argsort(response, axis=None), response.shape)
+    return numpy.array(numpy.flip((x,y))).T[:n]
+
 def select_with_threshold(response: numpy.ndarray, epsilon: int) -> numpy.ndarray:
     value_max = numpy.max(response)
     threshold = epsilon*value_max

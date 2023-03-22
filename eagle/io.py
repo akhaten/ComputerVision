@@ -1,15 +1,12 @@
 import numpy
 import matplotlib.pyplot
 import pathlib
-import enum
-import scipy.io
 
 
-
-def read(filename: pathlib.Path) -> numpy.ndarray:
+def read(filename: pathlib.Path) -> numpy.ndarray|None:
 
     
-    image: numpy.ndarray = None
+    image: numpy.ndarray|None = None
 
     extension = filename.suffix
     
